@@ -3,30 +3,43 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sal’s Strawberry Saloon</title>
+  <title>Golf Ball Shop</title>
   <link rel="stylesheet" href="style.css" />
+  
+  <!-- firebase start ****************************************-->
+  <!-- Firebase App (core Firebase SDK) is always required & must be listed 1st -->
+  <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-analytics.js"></script>
+  <!-- firebase end ******************************************-->
+  <script src="script.js"></script>
+  <script src="fb_setup.js"></script>
+  <script src="fb_io.js"></script>
 </head>
 <body>
   <div class="container">
-    <h1>Sal’s Strawberry Saloon</h1>
-    <h2>(and other fruit products)</h2>
+    <h1>Golf Ball Shop</h1>
+    <h2>(and other golfy products)</h2>
 
     <button onclick="fb_authenticate()">Login with Google</button>
+      <button onclick="fb_logout()">Log out with Google</button>
 
-    <form id="fruitForm">
+    <form id="golfForm">
       <label for="name">Your Name:</label>
       <input type="text" id="name" name="name" required />
 
-      <label for="favoriteFruit">Favorite Fruit:</label>
-      <input type="text" id="favoriteFruit" name="favoriteFruit" required />
+      <label for="favoriteGolfC">Favorite Golf Colour:</label>
+      <input type="text" id="favoriteGolfC" name="favoriteGolfC" required />
 
-      <label for="fruitQuantity">How many servings per week?</label>
-      <input type="number" id="fruitQuantity" name="fruitQuantity" required />
+      <label for="golfQuantity">How many golf balls per week?</label>
+      <input type="number" id="golfQuantity" name="golfQuantity" required />
 
       <!-- add more fields here -->
     </form>
 
-    <button onclick="fb_write()">Submit</button>
+    <button onclick="writeForm()">Submit</button>
 
     <p id="statusMessage"></p>
   </div>
