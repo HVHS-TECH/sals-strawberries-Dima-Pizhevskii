@@ -14,9 +14,9 @@
   <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-database.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-analytics.js"></script>
   <!-- firebase end ******************************************-->
-  <script src="script.js"></script>
-  <script src="fb_setup.js"></script>
-  <script src="fb_io.js"></script>
+  <script type="module" src="fb_io.js"></script>
+  <script type="module" src="fb_setup.js"></script>
+  <script type="module" src="script.js"></script>
 </head>
 <body>
   <div class="container">
@@ -26,14 +26,14 @@
     <button onclick="fb_authenticate()">Login with Google</button>
       <button onclick="fb_logout()">Log out with Google</button>
 
-    <form id="golfForm">
+    <form id="golfForm" onsubmit="return validateForm()">
       <label for="name">Your Name:</label>
       <input type="text" id="name" name="name" required />
 
       <label for="favoriteGolfC">Favorite Golf Colour:</label>
       <input type="text" id="favoriteGolfC" name="favoriteGolfC" required />
 
-      <label for="golfQuantity">How many golf balls per week?</label>
+      <label for="golfQuantity">How many golf balls?</label>
       <input type="number" id="golfQuantity" name="golfQuantity" required />
 
       <!-- add more fields here -->
