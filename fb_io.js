@@ -7,6 +7,7 @@
  **************************************************************
  **************************************************************/
 console.log("Running fb_io.js")
+
 var GLOBAL_user;
 var authenticationListener;
 export var loggedIn = false;
@@ -57,3 +58,7 @@ function fb_error(){
 
 window.fb_authenticate = fb_authenticate;
 window.fb_logout = fb_logout; 
+
+    document.getElementById("statusMessage").innerHTML = "you can submit only when logged in";
+
+
