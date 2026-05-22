@@ -12,8 +12,12 @@ function writeForm(){
     const favoriteGolfC = document.getElementById("favoriteGolfC").value;
     const golfQuantity = document.getElementById("golfQuantity").value;
     if (loggedIn == false){
-        alert("Please log in to submit the form.");
+
+                let element = document.getElementById("statusMessage");
+
+element.innerText = "Please log in to submit the form.";
         return;
+
     }else {
     console.log ("Form data: " + name + ", " + favoriteGolfC + ", " + golfQuantity);
 
@@ -24,7 +28,11 @@ function writeForm(){
         name: name,
     });
         console.log(loggedIn)
+                let element = document.getElementById("statusMessage");
+
+element.innerText = "Form data: " + name + ", " + favoriteGolfC + ", " + golfQuantity;
     }
+
 }
 
 window.writeForm = writeForm;
