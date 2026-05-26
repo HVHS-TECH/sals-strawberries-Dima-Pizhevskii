@@ -8,7 +8,7 @@
  **************************************************************/
 console.log("Running fb_io.js")
 
-var GLOBAL_user;
+export var GLOBAL_user;
 var authenticationListener;
 export var loggedIn = false;
       let myString = loggedIn;

@@ -3,7 +3,7 @@ console.log("Running Sal's Strawberries")
 const HTML_OUTPUT = document.getElementById("databaseOutput");
 
 
-import { loggedIn } from "./fb_io.js";
+import { GLOBAL_user, loggedIn } from "./fb_io.js";
 
 
 function writeForm(){
@@ -22,12 +22,14 @@ element.innerText = "Please log in to submit the form.";
     console.log ("Form data: " + name + ", " + favoriteGolfC + ", " + golfQuantity);
 
 
-    firebase.database().ref('/').set({
+    firebase.database().ref('/' + GLOBAL_user.uid).set({
         favoriteGolfC: favoriteGolfC,
         golfQuantity: golfQuantity,
         name: name,
     });
         console.log(loggedIn)
+        console.log(GLOBAL_user.uid)
+        console.log(GLOBAL_user.$uid)
                 let element = document.getElementById("statusMessage");
 
 element.innerText = "Form data: " + name + ", " + favoriteGolfC + ", " + golfQuantity;
@@ -36,4 +38,5 @@ element.innerText = "Form data: " + name + ", " + favoriteGolfC + ", " + golfQua
 }
 
 window.writeForm = writeForm;
+
 

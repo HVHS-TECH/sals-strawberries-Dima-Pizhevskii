@@ -17,6 +17,10 @@
   <script type="module" src="fb_io.js"></script>
   <script type="module" src="fb_setup.js"></script>
   <script type="module" src="script.js"></script>
+  <script >function clearall(){
+    firebase.database().ref('/').remove()
+      console.log("cleared")
+}</script>
 </head>
 <body>
 
