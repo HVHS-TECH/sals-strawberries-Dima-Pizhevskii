@@ -22,7 +22,7 @@ element.innerText = "Please log in to submit the form.";
     console.log ("Form data: " + name + ", " + favoriteGolfC + ", " + golfQuantity);
 
 
-    firebase.database().ref('/' + GLOBAL_user.uid).set({
+    firebase.database().ref('/users/' + GLOBAL_user.uid).set({
         favoriteGolfC: favoriteGolfC,
         golfQuantity: golfQuantity,
         name: name,
